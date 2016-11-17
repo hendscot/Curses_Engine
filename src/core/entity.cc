@@ -1,7 +1,7 @@
 #include "entity.h"
 namespace CE {
   Entity::Entity(){
-    _hp   = MAXH;
+    _hp   = MAXHP;
     _avtr = (char*)"^";
     _act  = true;
   }

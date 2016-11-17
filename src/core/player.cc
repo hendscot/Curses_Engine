@@ -1,5 +1,4 @@
 #include "player.h"
-#include "entity.h"
 #include "input.h"
 namespace CE {
   Player::Player(){
@@ -10,19 +9,19 @@ namespace CE {
 
   }
 
-  void Player::Move(){
+  void Player::Move(int maxX, int maxY){
     switch(CE::getKey()) {
-      case CE::RIGHT:
-        if ((x_coord+1) < maxX) x_coord += 5;
+      case RIGHT:
+        if ((_xPos+1) < 100) _xPos += 5;
         break;
-      case CE::LEFT:
-        if ((x_coord-1) > 0) x_coord -= 5;
+      case LEFT:
+        if ((_xPos-1) > 0) _xPos -= 5;
         break;
-      case CE::DOWN:
-        if ((y_coord+1) < maxY) y_coord += 2;
+      case DOWN:
+        if ((_yPos+1) < 100) _yPos += 2;
         break;
-      case CE::UP:
-        if ((y_coord-1) > 0) y_coord -= 2;
+      case UP:
+        if ((_yPos-1) > 0) _yPos -= 2;
         break;
       case (' '):
         Shoot();
@@ -32,8 +31,8 @@ namespace CE {
 
   void Player::Shoot (){
     int x, y;
-    x = x_coord;
-    y = y_coord;
+    x = _xPos;
+    y = _yPos;
     while ((y - 1) >= 0) {
       mvprintw(y, x, "!");
       refresh();

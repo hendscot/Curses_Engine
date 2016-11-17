@@ -1,7 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
-class Player;
-class Enemy;
+#include "player.h"
+#include "enemy.h"
 #define MAXEN 10
 namespace CE {
   class Scene {
@@ -14,7 +14,7 @@ namespace CE {
   private:
     unsigned lives;
     unsigned score;
-    int oriX, oriY;
+    int maxX, maxY;
     Player*  actor;
     Enemy*   en[MAXEN];
   };

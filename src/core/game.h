@@ -3,8 +3,8 @@
 #define DELAY 30000
 #define NUMEN 10
 typedef unsigned uint_t;
-class Scene;
-class CE {
+#include "scene.h"
+namespace CE {
   class Game{
   public:
     Game();
@@ -14,6 +14,7 @@ class CE {
     void Update();
     int getMaxX();
     int getMaxY();
+    void Run();
 
   private:
     int     maxX;

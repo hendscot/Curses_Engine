@@ -3,9 +3,13 @@
 #include <sys/time.h>
 #include "entity.h"
 #include "game.h"
+#include "scene.h"
+
+using namespace CE;
 
 namespace CE {
   Game::Game(){
+    scene = new Scene;
     // initalize ncurses
     this->Init();
   }
@@ -28,15 +32,19 @@ namespace CE {
   }
 
   bool Game::windowShouldClose(){
-    if (key == 27) {
-      endwin();
-      return 1;
+
+      return 0;
+
+  }
+
+  void Game::Run(){
+    while(!windowShouldClose()){
+      Update();
     }
   }
 
   void Game::Update() {
     clear();
-    Move();
     scene->Draw();
     refresh();
     usleep(DELAY);

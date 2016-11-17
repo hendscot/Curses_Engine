@@ -6,7 +6,7 @@ namespace CE{
   LEFT  = KEY_LEFT;
   DOWN  = KEY_DOWN;
   RIGHT = KEY_RIGHT;
-  int Input::getKey(){
+  int getKey(){
     return getch();
   }
 }

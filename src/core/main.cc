@@ -1,7 +1,9 @@
-#include "scene.h"
+#include "game.h"
 int main (int argc, char* argv[]) {
 
-  CE::Scene* spaceBattle = new CE::Scene;
+  CE::Game* spaceBattle = new CE::Game;
+
+  spaceBattle->Run();
 
   delete spaceBattle;
 

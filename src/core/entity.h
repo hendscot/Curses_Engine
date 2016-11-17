@@ -1,5 +1,7 @@
+#ifndef ENTITY_H
+#define ENTITY_H
 typedef unsigned unint_t;
-const int MAXH = 10;
+const int MAXHP = 10;
 namespace CE{
   class Entity {
   public:
@@ -13,8 +15,8 @@ namespace CE{
     int   getY();
     bool  isActive();
     void  setInactive();
-    void  setXY();
-  private:
+    void  setXY(int,int);
+  protected:
     bool    _act;
     char*   _avtr;
     int     _xPos;
@@ -22,3 +24,4 @@ namespace CE{
     unint_t _hp;
   };
 }
+#endif // ENTITY_H

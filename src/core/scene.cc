@@ -1,4 +1,5 @@
 #include "scene.h"
+#include "input.h"
 #include "ncurses.h"
 
 namespace CE {
@@ -6,12 +7,7 @@ namespace CE {
     lives = 10;
     score = 0;
     actor = new Player;
-    getmaxyx(oriY, oriX, stdscr);
-    actor->setXY((oriX >> 1), (oriY >> 1))
-    for (int i = 0; i < MAXEN; i++){
-      en[i] = new Enemy;
-      en[i]->setXY((((oriX - oriX) + 1),((oriY - oriY) + 1)))
-    }
+    actor->setXY((10), (10));
   }
 
   Scene::~Scene(){
@@ -19,16 +15,16 @@ namespace CE {
   }
 
   void Scene::Poll(){
-    actor->Move();
-    for (int i = 0; i < MAXEN; i++){
+    actor->Move(maxX, maxY);
+    /*for (int i = 0; i < MAXEN; i++){
       en[i]->Move();
-    }
+    }*/
   }
   void Scene::Draw(){
     Poll();
     mvprintw(actor->getY(), actor->getX(), actor->getAvatar());
-    for (int i = 0; i < MAXEN; i++){
-      mvprintw(en[i]->getY(), en[i]->getX, en[i]->getAvatar());
-    }
+    /*for (int i = 0; i < MAXEN; i++){
+      mvprintw(en[i]->getY(), en[i]->getX(), en[i]->getAvatar());
+    }*/
   }
 }
