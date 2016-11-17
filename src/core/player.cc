@@ -1,6 +1,6 @@
 #include "player.h"
 #include "entity.h"
-#include <ncurses.h>
+#include "input.h"
 namespace CE {
   Player::Player(){
 
@@ -10,18 +10,18 @@ namespace CE {
 
   }
 
-  void Player::Game::Move(){
-    switch(Input()) {
-      case KEY_RIGHT:
+  void Player::Move(){
+    switch(CE::getKey()) {
+      case CE::RIGHT:
         if ((x_coord+1) < maxX) x_coord += 5;
         break;
-      case KEY_LEFT:
+      case CE::LEFT:
         if ((x_coord-1) > 0) x_coord -= 5;
         break;
-      case KEY_DOWN:
+      case CE::DOWN:
         if ((y_coord+1) < maxY) y_coord += 2;
         break;
-      case KEY_UP:
+      case CE::UP:
         if ((y_coord-1) > 0) y_coord -= 2;
         break;
       case (' '):

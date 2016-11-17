@@ -6,13 +6,8 @@
 
 namespace CE {
   Game::Game(){
-    g_Score = 0;
-    enSize  = 0;
     // initalize ncurses
     this->Init();
-    // set print coords TODO
-    x_coord = (maxX >> 1);
-    y_coord = ((maxY >> 1));
   }
 
   Game::~Game(){
@@ -32,14 +27,6 @@ namespace CE {
     nodelay(stdscr, TRUE);
   }
 
-  int Game::getX(){
-    return x_coord;
-  }
-
-  int Game::getY(){
-    return y_coord;
-  }
-
   bool Game::windowShouldClose(){
     if (key == 27) {
       endwin();
@@ -47,15 +34,19 @@ namespace CE {
     }
   }
 
-  int Game::Input(){
-    return key = getch();
-  }
-
   void Game::Update() {
     clear();
     Move();
-    Scene->Draw();
+    scene->Draw();
     refresh();
     usleep(DELAY);
+  }
+
+  int Game::getMaxX(){
+    return maxX;
+  }
+
+  int Game::getMaxY(){
+    return maxY;
   }
 }

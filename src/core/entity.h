@@ -13,6 +13,7 @@ namespace CE{
     int   getY();
     bool  isActive();
     void  setInactive();
+    void  setXY();
   private:
     bool    _act;
     char*   _avtr;
