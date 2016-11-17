@@ -1,6 +1,8 @@
-class CEObject {
-public:
-  CEObject();
-  ~CEObject();
-private:
-};
+namespace CE {
+  class CEObject {
+  public:
+    CEObject();
+    ~CEObject();
+  private:
+  };  
+}

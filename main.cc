@@ -1,11 +1,9 @@
-#include "entity.h"
-#include "game.h"
+#include "scene.h"
 int main (int argc, char* argv[]) {
-  Game* game = new Game;
 
-  while (!game->windowShouldClose()) {
-    game->Update();
-  }
+  CE::Scene* spaceBattle = new CE::Scene;
+
+  delete spaceBattle;
 
   return 1;
 }
