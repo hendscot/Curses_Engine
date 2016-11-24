@@ -8,6 +8,9 @@ namespace CE{
     ~Enemy();
 
     void Move();
+
+  private:
+    static unsigned time;
   };
 }
 

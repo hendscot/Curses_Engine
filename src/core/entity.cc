@@ -47,4 +47,9 @@ namespace CE {
     _xPos = x;
     _yPos = y;
   }
+
+  void Entity::SetMaxXY(int x, int y){
+    _maxX = x;
+    _maxY = y;
+  }
 }

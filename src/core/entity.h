@@ -16,11 +16,14 @@ namespace CE{
     bool  isActive();
     void  setInactive();
     void  setXY(int,int);
+    void  SetMaxXY(int, int);
   protected:
     bool    _act;
     char*   _avtr;
     int     _xPos;
     int     _yPos;
+    int     _maxX;
+    int     _maxY;
     unint_t _hp;
   };
 }

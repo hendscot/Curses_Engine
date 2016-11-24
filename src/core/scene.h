@@ -11,12 +11,13 @@ namespace CE {
 
     void Draw();
     void Poll();
+    void SetMaxXY(int, int);
   private:
     unsigned lives;
     unsigned score;
     int maxX, maxY;
     Player*  actor;
-    Enemy*   en[MAXEN];
+    Enemy*   enemy;
   };
 }
 #endif //SCENE_H

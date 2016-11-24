@@ -23,6 +23,7 @@ namespace CE {
     initscr();
     // acquire screen size
     getmaxyx(stdscr, maxY, maxX);
+    scene->SetMaxXY(maxX, maxY);
     // set desired ncurses pref.
     cbreak();
     noecho();
@@ -48,13 +49,5 @@ namespace CE {
     scene->Draw();
     refresh();
     usleep(DELAY);
-  }
-
-  int Game::getMaxX(){
-    return maxX;
-  }
-
-  int Game::getMaxY(){
-    return maxY;
   }
 }
