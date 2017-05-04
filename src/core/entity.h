@@ -1,7 +1,5 @@
 #ifndef ENTITY_H
 #define ENTITY_H
-typedef unsigned unint_t;
-const int MAXHP = 10;
 namespace CE{
   class Entity {
   public:
@@ -18,13 +16,13 @@ namespace CE{
     void  setXY(int,int);
     void  SetMaxXY(int, int);
   protected:
-    bool    _act;
-    char*   _avtr;
-    int     _xPos;
-    int     _yPos;
-    int     _maxX;
-    int     _maxY;
-    unint_t _hp;
+    bool    act_;
+    char*   avtr_;
+    int     xPos_;
+    int     yPos_;
+    int     maxX_;
+    int     maxY_;
+    int     hp_;
   };
 }
 #endif // ENTITY_H
