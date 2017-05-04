@@ -1,9 +1,8 @@
 #include "entity.h"
 namespace CE {
   Entity::Entity(){
-    _hp   = MAXHP;
-    _avtr = (char*)"^";
-    _act  = true;
+    avtr_ = char*("^");
+    act_  = true;
   }
 
   Entity::~Entity(){
